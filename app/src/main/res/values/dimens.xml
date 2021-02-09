@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_1">2dp</dimen>
+    <dimen name="margin_2">4dp</dimen>
+    <dimen name="margin_3">6dp</dimen>
+    <dimen name="margin_special">10dp</dimen>
+    <dimen name="margin_special2">18dp</dimen>
+    <dimen name="padding_fab">12dp</dimen>
+    <dimen name="text_size_1">31sp</dimen>
+    <dimen name="text_size_2">26sp</dimen>
+    <dimen name="text_size_3">21sp</dimen>
+    <dimen name="text_size_4">17sp</dimen>
+    <dimen name="text_size_5">14sp</dimen>
+    <dimen name="text_size_6">12sp</dimen>
+    <dimen name="text_size_7">9sp</dimen>
+    <dimen name="heyButton_height">48dp</dimen>
+</resources>

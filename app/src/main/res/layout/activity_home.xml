@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:deviceIds="wear"
+    tools:context=".module.home.HomeActivity">
+    <com.heytap.wearable.support.widget.HeyMainTitleBar
+        android:id="@+id/homeHeyMainTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:heyText="@string/app_name"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:paddingBottom="@dimen/margin_2"
+            app:piv_animationType="thinWorm"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_radius="3dp"
+            app:piv_selectedColor="@color/colorText"
+            app:piv_unselectedColor="@color/colorPrimary" />
+    </RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

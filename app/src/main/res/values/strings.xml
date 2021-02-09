@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AcWear</string>
+    <string name="is_round" translatable="false">false</string>
+    <string name="login_title">Login</string>
+    <string name="login_summary">Click here to Login</string>
+    <string name="level">Level</string>
+    <string name="login_timeout">Login timeout</string>
+    <string name="checkIn">Check In</string>
+    <string name="logout">Logout</string>
+    <string name="not_login">Not Login</string>
+    <string name="feed_title">Feed</string>
+    <string name="bluetoothNetworkPrompt">Currently using the Bluetooth network, the respond may be slow.</string>
+    <string name="account_title">Account</string>
+    <string name="pulldown_string">Pull down to refresh</string>
+    <string name="release_string">Release to refresh</string>
+    <string name="refreshing_string">Refreshing</string>
+    <string name="no_more">No more</string>
+    <string name="video_title">Video</string>
+</resources>

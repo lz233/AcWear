@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AcWear</string>
+    <string name="login_title">登录</string>
+    <string name="login_summary">点这登录</string>
+    <string name="level">等级</string>
+    <string name="login_timeout">登录超时</string>
+    <string name="checkIn">签到</string>
+    <string name="logout">登出</string>
+    <string name="not_login">未登录</string>
+    <string name="feed_title">动态</string>
+    <string name="bluetoothNetworkPrompt">正在使用蓝牙网络，速度可能较慢。</string>
+    <string name="account_title">账号</string>
+    <string name="pulldown_string">下拉刷新</string>
+    <string name="release_string">释放刷新</string>
+    <string name="refreshing_string">正在刷新</string>
+    <string name="no_more">没有更多了</string>
+    <string name="video_title">视频</string>
+</resources>

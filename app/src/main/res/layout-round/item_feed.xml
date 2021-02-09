@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/feedTitleTextView"
+        style="@style/TitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_special"
+        android:gravity="center"
+        android:text="@string/feed_title"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_special"
+        android:layout_marginEnd="@dimen/margin_special"
+        android:layout_marginBottom="@dimen/margin_special"
+        android:background="@drawable/bgstyle_card"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_special">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_3">
+
+            <ImageView
+                android:id="@+id/feedAvatarImageView"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/feedUserNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_special"
+                android:layout_toEndOf="@id/feedAvatarImageView"
+                android:singleLine="true"
+                android:text="username"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/text_size_4" />
+
+            <TextView
+                android:id="@+id/userSignTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/feedUserNameTextView"
+                android:layout_alignStart="@id/feedUserNameTextView"
+                android:singleLine="true"
+                android:text="sign"
+                android:textSize="@dimen/text_size_5" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/feedVideoTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:text="videotitle"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/text_size_4" />
+
+        <cn.ac.lz233.acwear.view.AdjustImageView
+            android:id="@+id/feedVideoCoverImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

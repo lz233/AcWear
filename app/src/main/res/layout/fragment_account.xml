@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.ac.lz233.acwear.view.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/accountInformationFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_special">
+
+                <ImageView
+                    android:id="@+id/avatarImageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/userNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_special"
+                    android:layout_toEndOf="@id/avatarImageView"
+                    android:singleLine="true"
+                    android:text="@string/login_title"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:id="@+id/userSummaryTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userNameTextView"
+                    android:layout_alignStart="@id/userNameTextView"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:singleLine="true"
+                    android:text="@string/login_summary"
+                    android:textSize="@dimen/text_size_5" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <com.heytap.wearable.support.widget.HeySingleDefaultItem
+            android:id="@+id/checkInItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:heyText="@string/checkIn" />
+
+        <com.heytap.wearable.support.widget.HeySingleDefaultItem
+            android:id="@+id/logoutItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:heyText="@string/logout" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</cn.ac.lz233.acwear.view.ObservableScrollView>
