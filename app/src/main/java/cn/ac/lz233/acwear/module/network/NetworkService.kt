@@ -1,8 +1,6 @@
-package cn.ac.lz233.acwear.util
+package cn.ac.lz233.acwear.module.network
 
 import cn.ac.lz233.acwear.AcWearApp
-import cn.ac.lz233.acwear.module.home.MainAPI
-import cn.ac.lz233.acwear.module.login.LoginAPI
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,10 +15,10 @@ import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 object NetworkService {
-    val mainService by lazy { create(MainAPI::class.java, mainUrl) }
+    val webService by lazy { create(WebAPI::class.java, webUrl) }
     val scanService by lazy { create(LoginAPI::class.java, scanUrl) }
 
-    private const val mainUrl = "https://www.acfun.cn/"
+    private const val webUrl = "https://www.acfun.cn/"
     private const val scanUrl = "https://scan.acfun.cn/"
     private val okHttpClient =
         OkHttpClient().newBuilder().connectTimeout(500, TimeUnit.SECONDS).addInterceptor {
@@ -62,20 +60,4 @@ object NetworkService {
     private fun <T> create(serviceClass: Class<T>, baseUrl: String): T =
         Retrofit.Builder().baseUrl(baseUrl).client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create()).build().create(serviceClass)
-}
-
-suspend fun <T> Call<T>.await(): T {
-    return suspendCoroutine { continuation ->
-        enqueue(object : Callback<T> {
-            override fun onResponse(call: Call<T>, response: Response<T>) {
-                val body = response.body()
-                if (body != null) continuation.resume(body)
-                else continuation.resumeWithException(RuntimeException("response body is null"))
-            }
-
-            override fun onFailure(call: Call<T>, t: Throwable) {
-                continuation.resumeWithException(t)
-            }
-        })
-    }
 }

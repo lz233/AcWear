@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.ac.lz233.acwear.BaseFragment
 import cn.ac.lz233.acwear.R
+import cn.ac.lz233.acwear.module.network.NetworkService
 import cn.ac.lz233.acwear.util.LogUtil
-import cn.ac.lz233.acwear.util.NetworkService
 import cn.ac.lz233.acwear.util.isLogin
 import cn.ac.lz233.acwear.util.isRound
 import com.google.gson.Gson
@@ -92,7 +92,7 @@ class FeedFragment : BaseFragment() {
     private fun getFeed(isRefresh: Boolean = false) {
         if (isLogin()){
             if ((feedPageCursor <= feedPageSize)) {
-                NetworkService.mainService.getFeedList("5", feedPageCursor.toString())
+                NetworkService.webService.getFeedList("5", feedPageCursor.toString())
                     .enqueue(object : Callback<JsonObject> {
                         override fun onResponse(
                             call: Call<JsonObject>, response: Response<JsonObject>

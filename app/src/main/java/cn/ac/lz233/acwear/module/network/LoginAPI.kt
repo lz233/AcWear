@@ -1,4 +1,4 @@
-package cn.ac.lz233.acwear.module.login
+package cn.ac.lz233.acwear.module.network
 
 import com.google.gson.JsonObject
 import retrofit2.Call

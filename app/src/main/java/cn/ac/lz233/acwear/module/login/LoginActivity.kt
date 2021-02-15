@@ -6,11 +6,13 @@ import android.os.Bundle
 import cn.ac.lz233.acwear.AcWearApp
 import cn.ac.lz233.acwear.BaseActivity
 import cn.ac.lz233.acwear.R
+import cn.ac.lz233.acwear.module.network.NetworkService
 import cn.ac.lz233.acwear.util.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import retrofit2.await
 
 class LoginActivity : BaseActivity() {
     override fun onRound() {
@@ -22,7 +24,6 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         //init
-        val scanNetworkService = NetworkService.scanService
         scope.launch {
             try {
                 val response = NetworkService.scanService.startScanProcess(System.currentTimeMillis().toString()).await()
@@ -34,7 +35,7 @@ class LoginActivity : BaseActivity() {
                 AcWearApp.editor.putString("userImg", acceptCallback.get("ac_userimg").asString)
                 AcWearApp.editor.putString("passToken", acceptCallback.get("acPasstoken").asString)
                 AcWearApp.editor.apply()
-                val personalInfo=NetworkService.mainService.getPersonalInfo().await()
+                val personalInfo=NetworkService.webService.getPersonalInfo().await()
                 AcWearApp.editor.putString("userLevel", personalInfo.getAsJsonObject("info").get("level").asString)
                 AcWearApp.editor.apply()
                 finish()
